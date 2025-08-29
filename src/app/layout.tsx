@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { QueryProvider } from "@/lib/providers";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -13,11 +14,15 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Finasddee",
-  description: "Finasddee - Your project description here",
-  keywords: ["nextjs", "react", "typescript", "tailwindcss"],
-  authors: [{ name: "Your Name" }],
-  viewport: "width=device-width, initial-scale=1",
+  title: "Finasddee - Money Transfer and Online Payments",
+  description: "Send money to family, friends and businesses home and abroad with Finasddee. Fast, secure, and affordable international money transfers.",
+  keywords: ["money transfer", "international payments", "remittance", "fintech", "nextjs", "react", "typescript"],
+  authors: [{ name: "Finasddee Team" }],
+};
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
 };
 
 export default function RootLayout({
@@ -30,7 +35,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <QueryProvider>
+          {children}
+        </QueryProvider>
       </body>
     </html>
   );
