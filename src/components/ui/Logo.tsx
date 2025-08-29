@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 interface LogoProps {
   className?: string
@@ -17,14 +18,11 @@ export function Logo({ className = '', textColor = 'text-gold-light' }: LogoProp
         className="flex items-center space-x-2"
       >
         {/* Logo Icon */}
-        <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center shadow-lg">
-          <span className="text-dark-blue font-bold text-xl">F</span>
-        </div>
-        
-        {/* Logo Text */}
-        <div className={`text-2xl font-bold ${textColor}`}>
-          Finasddee
-        </div>
+        <Link href="/" className="flex items-center">
+          {/* The provided image path is used here. If a Logo component exists, it could be used instead. */}
+          <Image src="/images/logo.png" alt="Finasddee" height={400} width={400} className="w-[180px]" />
+        </Link>
+
       </motion.div>
     </Link>
   )

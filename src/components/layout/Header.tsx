@@ -13,7 +13,7 @@ export function MainHeader() {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
 
   return (
-    <header className="absolute top-0 left-0 right-0 bg-transparent text-white z-50">
+    <header className="absolute top-0 left-0 right-0 bg-transparent text-white z-50 shadow-md">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between py-4">
           {/* Logo */}
@@ -44,10 +44,8 @@ export function MainHeader() {
           </nav>
 
           {/* Desktop Auth Buttons */}
-          <div className="hidden lg:flex items-center space-x-4">
-            <Button variant="outline" size="sm" asChild>
-              <Link href="/login">Login</Link>
-            </Button>
+          <div className="hidden lg:flex items-center space-x-8">
+            <Link href="/login" className="text-white hover:text-gold-light transition-colors">Login</Link>
             <Button variant="primary" size="sm" asChild>
               <Link href="/signup">Register</Link>
             </Button>
