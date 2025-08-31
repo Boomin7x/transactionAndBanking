@@ -1,30 +1,33 @@
-'use client'
+"use client";
 
-import { motion } from 'framer-motion'
-import { UserPlus, Users, Send } from 'lucide-react'
-import { Button } from '@/components/ui/Button'
-import Link from 'next/link'
+import { motion } from "framer-motion";
+import { UserPlus, Users, Send } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const steps = [
   {
     id: 1,
     icon: UserPlus,
-    title: 'Sign Up Your Account',
-    description: 'Become a register user first, then log in to your account and enter your card or bank details that is required for you.'
+    title: "Sign Up Your Account",
+    description:
+      "Become a register user first, then log in to your account and enter your card or bank details that is required for you.",
   },
   {
     id: 2,
     icon: Users,
-    title: 'Select Your Recipient',
-    description: 'Enter your recipient\'s email address then add an amount with currency to send securely.'
+    title: "Select Your Recipient",
+    description:
+      "Enter your recipient's email address then add an amount with currency to send securely.",
   },
   {
     id: 3,
     icon: Send,
-    title: 'Send Money',
-    description: 'After sending money, the recipient will be notified via an email when money has been transferred to their account.'
-  }
-]
+    title: "Send Money",
+    description:
+      "After sending money, the recipient will be notified via an email when money has been transferred to their account.",
+  },
+];
 
 export function HowItWorksSection() {
   return (
@@ -41,7 +44,8 @@ export function HowItWorksSection() {
             The simple way to send money
           </h2>
           <p className="text-xl text-dark-blue/80 max-w-3xl mx-auto">
-            Finasddee is the fastest way to send money to family, friends and businesses home and abroad
+            Finasddee is the fastest way to send money to family, friends and
+            businesses home and abroad
           </p>
         </motion.div>
 
@@ -62,11 +66,11 @@ export function HowItWorksSection() {
                   </span>
                 </div>
               </div>
-              
+
               <h3 className="text-2xl font-bold text-dark-blue mb-4">
                 {step.title}
               </h3>
-              
+
               <p className="text-dark-blue/80 leading-relaxed">
                 {step.description}
               </p>
@@ -87,5 +91,5 @@ export function HowItWorksSection() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

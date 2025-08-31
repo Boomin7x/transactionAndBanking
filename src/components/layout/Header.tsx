@@ -1,16 +1,16 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
-import Link from 'next/link'
-import { Menu, X } from 'lucide-react'
-import { cn } from '@/lib/utils'
-import { Button } from '@/components/ui/Button'
-import { Logo } from '@/components/ui/Logo'
+import { useState } from "react";
+import Link from "next/link";
+import { Menu, X } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { Logo } from "@/components/ui/Logo";
+import { Button } from "../ui/button";
 
 export function MainHeader() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
     <header className="absolute top-0 left-0 right-0 bg-transparent text-white z-50 shadow-md">
@@ -45,8 +45,13 @@ export function MainHeader() {
 
           {/* Desktop Auth Buttons */}
           <div className="hidden lg:flex items-center space-x-8">
-            <Link href="/login" className="text-white hover:text-gold-light transition-colors">Login</Link>
-            <Button variant="primary" size="sm" asChild>
+            <Link
+              href="/login"
+              className="text-white hover:text-gold-light transition-colors"
+            >
+              Login
+            </Link>
+            <Button variant="default" size="sm" asChild>
               <Link href="/signup">Register</Link>
             </Button>
           </div>
@@ -88,10 +93,14 @@ export function MainHeader() {
               </Link>
               <div className="flex flex-col space-y-2 pt-4 border-t border-white/20">
                 <Button variant="outline" size="sm" asChild>
-                  <Link href="/login" onClick={toggleMenu}>Login</Link>
+                  <Link href="/login" onClick={toggleMenu}>
+                    Login
+                  </Link>
                 </Button>
-                <Button variant="primary" size="sm" asChild>
-                  <Link href="/signup" onClick={toggleMenu}>Register</Link>
+                <Button variant="default" size="sm" asChild>
+                  <Link href="/signup" onClick={toggleMenu}>
+                    Register
+                  </Link>
                 </Button>
               </div>
             </nav>
@@ -99,5 +108,5 @@ export function MainHeader() {
         )}
       </div>
     </header>
-  )
+  );
 }

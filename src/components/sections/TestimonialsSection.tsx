@@ -1,41 +1,41 @@
-'use client'
+"use client";
 
-import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { ChevronLeft, ChevronRight, Quote } from 'lucide-react'
-import { useTestimonials } from '@/lib/queries'
-import { Button } from '@/components/ui/Button'
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
+import { useTestimonials } from "@/lib/queries";
+import { Button } from "@/components/ui/button";
 
 export function TestimonialsSection() {
-  const { data: testimonials = [] } = useTestimonials()
-  const [currentIndex, setCurrentIndex] = useState(0)
+  const { data: testimonials = [] } = useTestimonials();
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   // Auto-advance testimonials
   useEffect(() => {
-    if (testimonials.length === 0) return
+    if (testimonials.length === 0) return;
 
     const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % testimonials.length)
-    }, 5000)
+      setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+    }, 5000);
 
-    return () => clearInterval(interval)
-  }, [testimonials.length])
+    return () => clearInterval(interval);
+  }, [testimonials.length]);
 
   const goToPrevious = () => {
-    setCurrentIndex((prev) => 
+    setCurrentIndex((prev) =>
       prev === 0 ? testimonials.length - 1 : prev - 1
-    )
-  }
+    );
+  };
 
   const goToNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % testimonials.length)
-  }
+    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+  };
 
   if (testimonials.length === 0) {
-    return null
+    return null;
   }
 
-  const currentTestimonial = testimonials[currentIndex]
+  const currentTestimonial = testimonials[currentIndex];
 
   return (
     <section className="py-20 bg-gradient-primary">
@@ -114,9 +114,9 @@ export function TestimonialsSection() {
                 key={index}
                 onClick={() => setCurrentIndex(index)}
                 className={`w-3 h-3 rounded-full transition-colors ${
-                  index === currentIndex 
-                    ? 'bg-dark-blue' 
-                    : 'bg-dark-blue/30 hover:bg-dark-blue/50'
+                  index === currentIndex
+                    ? "bg-dark-blue"
+                    : "bg-dark-blue/30 hover:bg-dark-blue/50"
                 }`}
                 aria-label={`Go to testimonial ${index + 1}`}
               />
@@ -125,5 +125,5 @@ export function TestimonialsSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
