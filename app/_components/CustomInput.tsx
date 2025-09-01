@@ -19,15 +19,15 @@ const CustomInput: FC<ICustomInput> = ({ label, icon, ...props }) => {
                     className=" h-[64px] bg-[#F5F5F5] rounded-[8px] border  border-[#E5E7EB] opacity-100"
                     {...props}
                 />
+                {icon
+                    ? (() => {
+                          const Icon = icon;
+                          return (
+                              <Icon className="size-[18px] absolute top-1/2 right-4 -translate-y-1/2" />
+                          );
+                      })()
+                    : null}
             </div>
-            {icon
-                ? (() => {
-                      const Icon = icon;
-                      return (
-                          <Icon className="size-[18px] absolute top-1/2 right-4 translate-y-1/2" />
-                      );
-                  })()
-                : null}
         </div>
     );
 };

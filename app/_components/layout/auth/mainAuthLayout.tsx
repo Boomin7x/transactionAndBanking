@@ -28,7 +28,13 @@ const MainAuthLayout: FC<IMainAuthLayout> = ({ children }) => {
                     "size-full flex items-center justify-center flex-col ",
                 )}
             >
-                <img src="/logo.png" alt="logo" style={logoStyle} />
+                <Image
+                    width={100}
+                    height={100}
+                    src="/Logo.png"
+                    alt="logo"
+                    style={logoStyle}
+                />
                 <h2 className="font-['Outfit'] tracking-wide font-semibold text-[42px] leading-[160%]  align-middle">
                     Finasddee
                 </h2>
