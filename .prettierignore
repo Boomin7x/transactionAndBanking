@@ -1,0 +1,17 @@
+# Ignore artifacts:
+build
+dist
+.next
+.vercel
+.turbo
+
+# Ignore development tools and dependencies:
+node_modules
+coverage
+
+# Ignore logs and temporary files:
+*.log
+.DS_Store
+
+# Ignore specific file types or patterns:
+*.svg
