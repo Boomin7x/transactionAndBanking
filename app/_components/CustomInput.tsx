@@ -1,5 +1,5 @@
 import { Input } from "@/components/ui/input";
-import { AlignEndVertical } from "lucide-react";
+import { cn } from "@/lib/utils";
 import React, { FC } from "react";
 import { IconType } from "../_interface";
 
@@ -7,16 +7,23 @@ interface ICustomInput extends React.ComponentProps<"input"> {
     label?: string;
     icon?: IconType;
 }
-const CustomInput: FC<ICustomInput> = ({ label, icon, ...props }) => {
-    const Icon = icon;
+const CustomInput: FC<ICustomInput> = ({
+    label,
+    icon,
+    className,
+    ...props
+}) => {
     return (
         <div className="relative ">
-            <p className="font-sans font-bold text-[12px] leading-[18px] mb-2">
+            <p className="font-sans font-semibold  capitalize text-sm leading-[18px] mb-2">
                 {label}
             </p>
             <div className="relative h-fit">
                 <Input
-                    className=" h-[64px] bg-[#F5F5F5] rounded-[8px] border  border-[#E5E7EB] opacity-100"
+                    className={cn(
+                        " p-6 bg-[#F5F5F5] rounded-sm border shadow-none  border-[#E5E7EB] opacity-100",
+                        className,
+                    )}
                     {...props}
                 />
                 {icon
